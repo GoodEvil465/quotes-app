@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'routes/app_routes.dart';
 import 'routes/route_names.dart';
-// import 'providers/quotes.dart';
+import 'providers/quotes.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,14 +14,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // return ChangeNotifierProvider(
-    // create: (_) => Quotes(),
-    // child:
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: AppRoutes.onGenerateRoute,
-      initialRoute: RouteNames.homepage,
-      // ),
+    return ChangeNotifierProvider(
+      create: (_) => Quotes(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        onGenerateRoute: AppRoutes.onGenerateRoute,
+        initialRoute: RouteNames.homepage,
+      ),
     );
   }
 }
